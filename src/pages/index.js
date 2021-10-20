@@ -4,6 +4,7 @@ import Seo from "../components/seo"
 import Benefits from '../components/benefits'
 import Features from "../components/features"
 import Responsive from "../components/responsive"
+import Development from "../components/development"
 
 const IndexPage = () => (
   <Layout>
@@ -16,6 +17,7 @@ const IndexPage = () => (
     </div>
     <Features />
     <Responsive/>
+    <Development/>
   </Layout>
 )
 
