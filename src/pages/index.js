@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Benefits from '../components/benefits'
 import Features from "../components/features"
+import Responsive from "../components/responsive"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
       <Benefits />
     </div>
     <Features />
+    <Responsive/>
   </Layout>
 )
 
