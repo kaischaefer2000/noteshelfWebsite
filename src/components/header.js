@@ -13,20 +13,21 @@ const navigation = [
 ]
 
 const Header = ({ active }) => {
-  let containerWidth
-  let screenWidth
+  const [containerWidth, setContainerWidth] = React.useState(undefined)
+  const [screenWidth, setScreenWidth] = React.useState(0)
 
-  if (typeof document !== `undefined`) {
-    
-    containerWidth = document.querySelector("#___gatsby");
-    screenWidth = containerWidth.offsetWidth;
-    console.log(containerWidth, screenWidth)
-    
-  } else {
-    console.log(containerWidth, screenWidth)
-  }
+  React.useEffect(() => {
+    if (typeof document !== `undefined`) {
+      setContainerWidth(document.querySelector("#___gatsby"))
+      if (containerWidth !== undefined) {
+        setScreenWidth(containerWidth.offsetWidth)
+      }
+      console.log(containerWidth, screenWidth)
+    } else {
+      console.log(containerWidth, screenWidth)
+    }
+  })
 
- 
   return (
     <header>
       <div className="relative overflow-hidden">
