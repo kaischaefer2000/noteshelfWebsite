@@ -13,8 +13,19 @@ const navigation = [
 ]
 
 const Header = ({ active }) => {
-  const containerWidth = document.querySelector("#___gatsby")
-  const screenWidth = containerWidth.offsetWidth
+  let containerWidth
+  let screenWidth
+
+  if (typeof document !== `undefined`) {
+    
+    containerWidth = document.querySelector("#___gatsby");
+    screenWidth = containerWidth.offsetWidth;
+    console.log(containerWidth, screenWidth)
+    
+  } else {
+    console.log(containerWidth, screenWidth)
+  }
+
  
   return (
     <header>
