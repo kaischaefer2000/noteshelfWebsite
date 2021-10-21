@@ -156,7 +156,7 @@ const steps = [
 const features = () => {
   return (
     <div id="features">
-      <div className="py-10 px-20">
+      <div className="py-10">
         <Stack sx={{ width: "100%" }} spacing={4}>
           <Stepper
             alternativeLabel
