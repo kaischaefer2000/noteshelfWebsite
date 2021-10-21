@@ -1,8 +1,5 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { Link } from 'gatsby'
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -10,24 +7,25 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header/>
-      
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <main>{children}</main>
+      <footer className="py-7 bg-gray-100">
+        <div className="flex flex-row justify-center">
+          <Link className="text-gray-600 text-sm" to="/impressum">
+            Impressum
+          </Link>
+          <Link
+            className="text-gray-600 pl-3 text-sm"
+            to="/datenschutz"
+          >
+            Datenschutz
+          </Link>
+          <span className="text-gray-500 pl-5 text-sm">
+            © {new Date().getFullYear()} Kai Schäfer
+          </span>
+        </div>
+      </footer>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

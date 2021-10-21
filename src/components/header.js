@@ -1,22 +1,22 @@
 import * as React from "react"
-import Bg1 from '../images/headerBg5.png'
+import Bg1 from "../images/headerBg5.png"
 import Bg2 from "../images/headerBg.jpg"
-import Icon from '../images/icon.png'
+import Icon from "../images/icon.png"
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 
 const navigation = [
-  { name: "Vorteile", href: "#benefits" },
-  { name: "Features", href: "#features" },
-  { name: "Entwicklung", href: "#development" },
-  { name: "Kontakt", href: "#contact" },
+  { name: "Vorteile", href: "/#benefits" },
+  { name: "Features", href: "/#features" },
+  { name: "Kontakt", href: "/#contact" },
 ]
 
-let windowSize = window.innerWidth
-console.log(windowSize)
+const containerWidth = document.querySelector("#___gatsby")
+const screenWidth = containerWidth.offsetWidth
 
-const Header = () => (
+
+const Header = ({ active }) => (
   <header>
     <div className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -29,7 +29,7 @@ const Header = () => (
               >
                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
-                    <a href="#">
+                    <a href="/">
                       <span className="sr-only">Workflow</span>
                       <img className="h-8 w-auto sm:h-10" src={Icon} />
                     </a>
@@ -96,7 +96,10 @@ const Header = () => (
             </Transition>
           </Popover>
 
-          <main className="mt-8 mx-auto max-w-7xl px-4 sm:mt-10 sm:px-6 md:mt-16 lg:mt-18 lg:px-8 xl:mt-24">
+          <main
+            style={{ display: `${active}` }}
+            className="mt-8 mx-auto max-w-7xl px-4 sm:mt-10 sm:px-6 md:mt-16 lg:mt-18 lg:px-8 xl:mt-24"
+          >
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">Thought Collector</span>{" "}
@@ -125,10 +128,13 @@ const Header = () => (
             </div>
           </main>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0">
+        <div
+          style={{ display: `${active}` }}
+           className="lg:absolute lg:inset-y-0 lg:right-0"
+        >
           <img
             className="p-0 lg:p-16  lg:w-full lg:h-full"
-            src={(windowSize < 1000) ? Bg2 : Bg1}
+            src={screenWidth < 1000 ? Bg2 : Bg1}
             alt=""
           />
         </div>

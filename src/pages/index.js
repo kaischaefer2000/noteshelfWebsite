@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import Header from "../components/header"
 import Seo from "../components/seo"
 import Benefits from '../components/benefits'
 import Features from "../components/features"
@@ -8,6 +9,7 @@ import Development from "../components/development"
 
 const IndexPage = () => (
   <Layout>
+    <Header active="block" />
     <Seo title="Home" />
     <div className="bg-gray-100 p-10">
       <h2 id="benefits" className="text-center mb-10">
@@ -16,8 +18,8 @@ const IndexPage = () => (
       <Benefits />
     </div>
     <Features />
-    <Responsive/>
-    <Development/>
+    <Responsive />
+    <Development />
   </Layout>
 )
 

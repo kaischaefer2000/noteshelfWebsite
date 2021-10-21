@@ -11,9 +11,10 @@ const development = () => {
       <form
         method="post"
         action="https://getform.io/f/c6b3371f-1aa1-48c7-aeb4-6695ebbc2635"
+        id="contact"
       >
-        <div className="flex flex-row">
-          <div className="w-1/2 flex flex-col p-5 rounded-l-2x border-2 ml-2 bg-opacity-10 border-transparent">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-screen flex flex-col p-5  bg-opacity-10">
             <h3>Schreibe mir gerne eine Nachicht :)</h3>
             <TextField className="mb-2" name="name" id="name" label="Name" />
             <TextField
@@ -35,7 +36,7 @@ const development = () => {
               Senden
             </Button>
           </div>
-          <div className="w-1/2 pl-1/2 rounded-r-2x border mr-2">
+          <div className="md:w-screen pl-1/2 rounded-r-2x border mr-0 md:mr-2">
             <div className="flex flex-col">
               <div className="w-full flex align-center justify-center">
                 <img className="mt-4 shadowImage" src={Kai}></img>
