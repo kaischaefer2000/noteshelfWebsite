@@ -143,6 +143,7 @@ const Header = ({ active }) => {
             style={{ display: `${active}` }}
             className="lg:absolute lg:inset-y-0 lg:right-0"
           >
+            {console.log(screenWidth)}
             <img
               className="p-0 lg:p-16  lg:w-full lg:h-full"
               src={screenWidth < 1000 ? Bg2 : Bg1}
