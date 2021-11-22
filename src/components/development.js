@@ -42,7 +42,7 @@ const development = () => {
                 <img className="mt-4 shadowImage" src={Kai}></img>
               </div>
               <h4 className="text-center">Kai Schäfer</h4>
-              <p className="text-center">Freelancer (Webentwicklung)</p>
+              <p className="text-center">Frontend Entwickler</p>
               <div className="w-full flex align-center justify-center">
                 <a href="https://www.linkedin.com/in/kai-sch%C3%A4fer-674646222/">
                   <LinkedInIcon color="primary" />
